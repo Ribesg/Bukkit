@@ -182,6 +182,7 @@ public final class Bukkit {
     /**
      * @see Server#getPlayer(String name)
      */
+    @Deprecated
     public static Player getPlayer(String name) {
         return server.getPlayer(name);
     }
@@ -189,8 +190,16 @@ public final class Bukkit {
     /**
      * @see Server#matchPlayer(String name)
      */
+    @Deprecated
     public static List<Player> matchPlayer(String name) {
         return server.matchPlayer(name);
+    }
+
+    /**
+     * @see Server#getPlayer(java.util.UUID)
+     */
+    public static Player getPlayer(UUID id) {
+        return server.getPlayer(id);
     }
 
     /**
@@ -408,13 +417,22 @@ public final class Bukkit {
     /**
      * @see Server#getOfflinePlayer(String name)
      */
+    @Deprecated
     public static OfflinePlayer getOfflinePlayer(String name) {
         return server.getOfflinePlayer(name);
     }
 
     /**
+     * @see Server#getOfflinePlayer(java.util.UUID)
+     */
+    public static OfflinePlayer getOfflinePlayer(UUID id) {
+        return server.getOfflinePlayer(id);
+    }
+
+    /**
      * @see Server#getPlayerExact(String name)
      */
+    @Deprecated
     public static Player getPlayerExact(String name) {
         return server.getPlayerExact(name);
     }
@@ -445,6 +463,13 @@ public final class Bukkit {
      */
     public static Set<OfflinePlayer> getBannedPlayers() {
         return server.getBannedPlayers();
+    }
+
+    /**
+     * @see Server#getBanList(BanList.Type)
+     */
+    public static BanList getBanList(BanList.Type type){
+        return server.getBanList(type);
     }
 
     /**
@@ -666,7 +691,7 @@ public final class Bukkit {
     }
 
     /**
-     * @see Server#loadServerIcon(File)()
+     * @see Server#loadServerIcon(File)
      */
     public static CachedServerIcon loadServerIcon(File file) throws Exception {
         return server.loadServerIcon(file);
@@ -677,5 +702,27 @@ public final class Bukkit {
      */
     public static CachedServerIcon loadServerIcon(BufferedImage image) throws Exception {
         return server.loadServerIcon(image);
+    }
+
+    /**
+     * @see Server#setIdleTimeout(int)
+     */
+    public static void setIdleTimeout(int threshold) {
+        server.setIdleTimeout(threshold);
+    }
+
+    /**
+     * @see Server#getIdleTimeout()
+     */
+    public static int getIdleTimeout() {
+        return server.getIdleTimeout();
+    }
+
+    /**
+     * @see Server#getUnsafe()
+     */
+    @Deprecated
+    public static UnsafeValues getUnsafe() {
+        return server.getUnsafe();
     }
 }
