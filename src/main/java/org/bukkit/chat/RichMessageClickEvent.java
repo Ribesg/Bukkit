@@ -5,10 +5,12 @@ public class RichMessageClickEvent extends RichMessageEvent {
     // TODO Implementation
 
     public enum Type {
-        open_url,
-        open_file,
-        run_command,
-        suggest_command
+
+        OPEN_URL,
+        OPEN_FILE,
+        RUN_COMMAND,
+        SUGGEST_COMMAND
+
     }
 
 }

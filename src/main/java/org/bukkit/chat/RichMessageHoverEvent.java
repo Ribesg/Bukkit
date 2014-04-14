@@ -5,9 +5,11 @@ public class RichMessageHoverEvent {
     // TODO Implementation
 
     public enum Type {
-        show_text,
-        show_achievement,
-        show_item
+
+        SHOW_TEXT,
+        SHOW_ACHIEVEMENT,
+        SHOW_ITEM
+
     }
 
 }
