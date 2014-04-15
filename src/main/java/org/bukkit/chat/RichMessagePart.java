@@ -1,44 +1,88 @@
 package org.bukkit.chat;
 
-import org.apache.commons.lang.Validate;
 import org.bukkit.ChatColor;
 
+/**
+ * Represents a part of a {@link org.bukkit.chat.RichMessage}.
+ */
 // TODO Add translation stuff
-public class RichMessagePart extends RichMessage {
+public class RichMessagePart {
 
-    private RichMessageClickEvent clickEvent;
-    private RichMessageHoverEvent hoverEvent;
-    private ChatColor             color;
-    private String                text;
-    private boolean               bold;
-    private boolean               underlined;
-    private boolean               italic;
-    private boolean               strikedThrough;
-    private boolean               obfuscated;
+    private String text;
+    private ChatColor color;
+    private boolean bold;
+    private boolean italic;
+    private boolean magic;
+    private boolean strikedThrough;
+    private boolean underlined;
+    private ClickHook actionOnClick;
+    private Tooltip tooltip;
 
+    /**
+     * Builds a text-only RichMessagePart.
+     *
+     * @param text the text of this RichMessagePart
+     */
     public RichMessagePart(String text) {
-        this(null, null, null, text, false, false, false, false, false);
-    }
-
-    public RichMessagePart(RichMessageClickEvent clickEvent, RichMessageHoverEvent hoverEvent, ChatColor color, String text, boolean bold, boolean underlined, boolean italic, boolean strikedThrough, boolean obfuscated) {
-        Validate.notNull(text, "Rich message text cann't be null");
-        this.color = color;
-        this.text = text;
-        this.bold = bold;
-        this.underlined = underlined;
-        this.italic = italic;
-        this.strikedThrough = strikedThrough;
-        this.obfuscated = obfuscated;
-        this.clickEvent = clickEvent;
-        this.hoverEvent = hoverEvent;
+        this(null, null, text);
     }
 
     /**
-     * Used to know if the building needs a json advanced stuff or if a simple String is enough.
+     * Builds any RichMessagePart.
+     * <p/>
+     * For format modifiers, note that only the last color provided is taken
+     * into account and that {@link ChatColor#RESET} is not supported.
+     *
+     * @param actionOnClick the action executed when the player click on
+     *                      this RichMessagePart
+     * @param tooltip       the tooltip shown when the player hover on
+     *                      this RichMessagePart
+     * @param text          the text of this RichMessagePart
+     * @param modifiers     format modifiers for this RichMessagePart
      */
-    public boolean containsOnlyText() {
-        return color == null && !bold && !underlined && !italic && !strikedThrough && !obfuscated && clickEvent == null && hoverEvent == null;
+    public RichMessagePart(ClickHook actionOnClick, Tooltip tooltip, String text, ChatColor... modifiers) {
+        this.text = text;
+        this.actionOnClick = actionOnClick;
+        this.tooltip = tooltip;
+        for (ChatColor modifier : modifiers) {
+            switch (modifier) {
+                case MAGIC:
+                    this.magic = true;
+                    break;
+                case BOLD:
+                    this.bold = true;
+                    break;
+                case STRIKETHROUGH:
+                    this.strikedThrough = true;
+                    break;
+                case UNDERLINE:
+                    this.underlined = true;
+                    break;
+                case ITALIC:
+                    this.italic = true;
+                    break;
+                case RESET:
+                    throw new IllegalArgumentException("RichMessages do not handle resetting formatting");
+                default: // Color
+                    this.color = modifier;
+                    break;
+            }
+        }
     }
+
+    /**
+     * Checks if this RichMessagePart can be represented as a simple String
+     * or if it needs to be converted into a Json element.
+     *
+     * @return true if this RichMessagePart can be represented as a simple
+     * String, false otherwise
+     */
+    public boolean isSimpleText() {
+        return color == null && !bold && !underlined && !italic && !strikedThrough &&
+                !magic && actionOnClick == null && tooltip == null;
+    }
+
+    // TODO Simple Javadoc below this
 
     public boolean isBold() {
         return bold;
@@ -72,12 +116,12 @@ public class RichMessagePart extends RichMessage {
         this.strikedThrough = strikedThrough;
     }
 
-    public boolean isObfuscated() {
-        return obfuscated;
+    public boolean isMagic() {
+        return magic;
     }
 
-    public void setObfuscated(boolean obfuscated) {
-        this.obfuscated = obfuscated;
+    public void setMagic(boolean magic) {
+        this.magic = magic;
     }
 
     public String getText() {
