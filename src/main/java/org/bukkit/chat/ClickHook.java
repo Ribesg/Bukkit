@@ -1,7 +1,6 @@
 package org.bukkit.chat;
 
-// TODO Add subclasses
-// TODO find better API names for those internals Enums, closer to their behaviours
+// TODO Find a better name for this
 public abstract class ClickHook {
 
     protected enum Type {

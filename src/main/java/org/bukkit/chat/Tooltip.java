@@ -3,9 +3,10 @@ package org.bukkit.chat;
 public abstract class Tooltip {
 
     protected enum Type {
-        SHOW_TEXT,
         SHOW_ACHIEVEMENT,
+        SHOW_ENTITY,
         SHOW_ITEM,
+        SHOW_TEXT,
     }
 
     protected final Type type;
