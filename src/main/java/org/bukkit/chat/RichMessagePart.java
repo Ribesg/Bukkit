@@ -18,8 +18,8 @@ public class RichMessagePart extends RichMessage {
         this.parent = parent;
     }
 
-    public RichMessagePart(RichMessage parent, ClickHook actionOnClick, Tooltip tooltip, String text, ChatColor... modifiers) {
-        super(actionOnClick, tooltip, text, modifiers);
+    public RichMessagePart(RichMessage parent, ClickAction clickAction, Tooltip tooltip, String text, ChatColor... modifiers) {
+        super(clickAction, tooltip, text, modifiers);
         this.parent = parent;
     }
 

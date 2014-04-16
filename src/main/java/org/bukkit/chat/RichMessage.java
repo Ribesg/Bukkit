@@ -24,7 +24,7 @@ public class RichMessage {
     private boolean magic;
     private boolean strikedThrough;
     private boolean underlined;
-    private ClickHook actionOnClick;
+    private ClickAction clickAction;
     private Tooltip tooltip;
 
     /**
@@ -49,16 +49,16 @@ public class RichMessage {
      * For format modifiers, note that only the last color provided is taken
      * into account and that {@link ChatColor#RESET} is not supported.
      *
-     * @param actionOnClick the action executed when the player click on
-     *                      this RichMessage
-     * @param tooltip       the tooltip shown when the player hover on
-     *                      this RichMessage
-     * @param text          the text of this RichMessage
-     * @param modifiers     format modifiers for this RichMessage
+     * @param clickAction the action executed when the player click on
+     *                    this RichMessage
+     * @param tooltip     the tooltip shown when the player hover on
+     *                    this RichMessage
+     * @param text        the text of this RichMessage
+     * @param modifiers   format modifiers for this RichMessage
      */
-    public RichMessage(ClickHook actionOnClick, Tooltip tooltip, String text, ChatColor... modifiers) {
+    public RichMessage(ClickAction clickAction, Tooltip tooltip, String text, ChatColor... modifiers) {
         this.text = text;
-        this.actionOnClick = actionOnClick;
+        this.clickAction = clickAction;
         this.tooltip = tooltip;
         for (ChatColor modifier : modifiers) {
             switch (modifier) {
@@ -120,7 +120,7 @@ public class RichMessage {
      */
     public boolean isSimpleText() {
         return color == null && !bold && !underlined && !italic && !strikedThrough &&
-                !magic && actionOnClick == null && tooltip == null;
+                !magic && clickAction == null && tooltip == null;
     }
 
     public boolean isValid() {

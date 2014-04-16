@@ -1,11 +1,10 @@
 package org.bukkit.chat;
 
-// TODO Find a better name for this
-public class RunCmdHook extends ClickHook {
+public class ChatAction extends ClickAction {
 
     private final String text;
 
-    public RunCmdHook(String text) {
+    public ChatAction(String text) {
         super(Type.RUN_COMMAND);
         this.text = text;
     }

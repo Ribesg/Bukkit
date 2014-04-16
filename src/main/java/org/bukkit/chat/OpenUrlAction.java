@@ -2,14 +2,13 @@ package org.bukkit.chat;
 
 import java.util.regex.Pattern;
 
-// TODO Find a better name for this
-public class OpenUrlHook extends ClickHook {
+public class OpenUrlAction extends ClickAction {
 
     private static final Pattern HTTP_REGEX = Pattern.compile("^https?://", Pattern.CASE_INSENSITIVE);
 
     private final String url;
 
-    public OpenUrlHook(String url) {
+    public OpenUrlAction(String url) {
         super(Type.OPEN_URL);
         if (!HTTP_REGEX.matcher(url).matches()) {
             throw new IllegalArgumentException("Valid http/https URL required");

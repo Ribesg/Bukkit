@@ -1,7 +1,6 @@
 package org.bukkit.chat;
 
-// TODO Find a better name for this
-public abstract class ClickHook {
+public abstract class ClickAction {
 
     protected enum Type {
         OPEN_URL,
@@ -11,7 +10,7 @@ public abstract class ClickHook {
 
     protected final Type type;
 
-    protected ClickHook(Type type) {
+    protected ClickAction(Type type) {
         this.type = type;
     }
 }
