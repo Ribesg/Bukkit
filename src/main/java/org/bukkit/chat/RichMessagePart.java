@@ -7,7 +7,7 @@ public class RichMessagePart {
 
     private String text;
     private ClickAction clickAction;
-    private Tooltip tooltip;
+    private HoverAction hoverAction;
 
     /**
      * Builds a text-only RichMessage.
@@ -28,13 +28,13 @@ public class RichMessagePart {
      * @param text        the text of this RichMessage
      * @param clickAction the action executed when the player click on
      *                    this RichMessage
-     * @param tooltip     the tooltip shown when the player hover on
+     * @param hoverAction the hoverAction executed when the player hover on
      *                    this RichMessage
      */
-    public RichMessagePart(String text, ClickAction clickAction, Tooltip tooltip) {
+    public RichMessagePart(String text, ClickAction clickAction, HoverAction hoverAction) {
         this.text = text;
         this.clickAction = clickAction;
-        this.tooltip = tooltip;
+        this.hoverAction = hoverAction;
     }
 
     // TODO Simple Javadoc below this
@@ -55,11 +55,11 @@ public class RichMessagePart {
         this.clickAction = clickAction;
     }
 
-    public Tooltip getTooltip() {
-        return tooltip;
+    public HoverAction getHoverAction() {
+        return hoverAction;
     }
 
-    public void setTooltip(Tooltip tooltip) {
-        this.tooltip = tooltip;
+    public void setHoverAction(HoverAction hoverAction) {
+        this.hoverAction = hoverAction;
     }
 }

@@ -3,12 +3,12 @@ package org.bukkit.chat;
 import org.bukkit.Achievement;
 
 // TODO Javadoc
-public class AchievementTooltip extends Tooltip {
+public class AchievementHoverAction extends HoverAction {
 
     private final Achievement achievement;
 
-    public AchievementTooltip(Achievement achievement) {
-        super(Tooltip.Type.SHOW_ACHIEVEMENT);
+    public AchievementHoverAction(Achievement achievement) {
+        super(HoverAction.Type.SHOW_ACHIEVEMENT);
         this.achievement = achievement;
     }
 

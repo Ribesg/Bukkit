@@ -1,11 +1,11 @@
 package org.bukkit.chat;
 
 // TODO Javadoc
-public class TextTooltip extends Tooltip {
+public class TextHoverAction extends HoverAction {
 
     private final String text;
 
-    public TextTooltip(String text) {
+    public TextHoverAction(String text) {
         super(Type.SHOW_TEXT);
         this.text = text;
     }

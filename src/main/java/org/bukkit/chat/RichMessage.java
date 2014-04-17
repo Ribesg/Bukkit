@@ -41,11 +41,11 @@ public class RichMessage implements Iterable<RichMessagePart> {
      * @param text        the text of this RichMessage
      * @param clickAction the action executed when the player click on
      *                    this RichMessage
-     * @param tooltip     the tooltip shown when the player hover on
+     * @param hoverAction the hoverAction executed when the player hover on
      *                    this RichMessage
      */
-    public RichMessage(String text, ClickAction clickAction, Tooltip tooltip) {
-        this(new RichMessagePart(text, clickAction, tooltip));
+    public RichMessage(String text, ClickAction clickAction, HoverAction hoverAction) {
+        this(new RichMessagePart(text, clickAction, hoverAction));
     }
 
     /**
@@ -75,13 +75,13 @@ public class RichMessage implements Iterable<RichMessagePart> {
         return this;
     }
 
-    public RichMessage append(String text, Tooltip tooltip) {
-        this.parts.add(new RichMessagePart(text, null, tooltip));
+    public RichMessage append(String text, HoverAction hoverAction) {
+        this.parts.add(new RichMessagePart(text, null, hoverAction));
         return this;
     }
 
-    public RichMessage append(String text, ClickAction clickAction, Tooltip tooltip) {
-        this.parts.add(new RichMessagePart(text, clickAction, tooltip));
+    public RichMessage append(String text, ClickAction clickAction, HoverAction hoverAction) {
+        this.parts.add(new RichMessagePart(text, clickAction, hoverAction));
         return this;
     }
 
@@ -101,13 +101,13 @@ public class RichMessage implements Iterable<RichMessagePart> {
         return this;
     }
 
-    public RichMessage insert(int index, String text, Tooltip tooltip) {
-        this.parts.add(index, new RichMessagePart(text, null, tooltip));
+    public RichMessage insert(int index, String text, HoverAction hoverAction) {
+        this.parts.add(index, new RichMessagePart(text, null, hoverAction));
         return this;
     }
 
-    public RichMessage insert(int index, String text, ClickAction clickAction, Tooltip tooltip) {
-        this.parts.add(index, new RichMessagePart(text, clickAction, tooltip));
+    public RichMessage insert(int index, String text, ClickAction clickAction, HoverAction hoverAction) {
+        this.parts.add(index, new RichMessagePart(text, clickAction, hoverAction));
         return this;
     }
 

@@ -1,7 +1,7 @@
 package org.bukkit.chat;
 
 // TODO Javadoc
-public abstract class Tooltip {
+public abstract class HoverAction {
 
     public enum Type {
         SHOW_ACHIEVEMENT,
@@ -11,7 +11,7 @@ public abstract class Tooltip {
 
     protected final Type type;
 
-    protected Tooltip(Type type) {
+    protected HoverAction(Type type) {
         this.type = type;
     }
 
