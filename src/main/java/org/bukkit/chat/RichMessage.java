@@ -2,6 +2,7 @@ package org.bukkit.chat;
 
 import org.apache.commons.lang.Validate;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  */
 // TODO Add translation stuff
 // TODO Add score stuff
-public class RichMessage {
+public class RichMessage implements Iterable<RichMessagePart> {
 
     protected final List<RichMessagePart> parts = new LinkedList<RichMessagePart>();
 
@@ -108,5 +109,10 @@ public class RichMessage {
     public RichMessage insert(int index, String text, ClickAction clickAction, Tooltip tooltip) {
         this.parts.add(index, new RichMessagePart(text, clickAction, tooltip));
         return this;
+    }
+
+    @Override
+    public Iterator<RichMessagePart> iterator() {
+        return this.parts.iterator();
     }
 }
