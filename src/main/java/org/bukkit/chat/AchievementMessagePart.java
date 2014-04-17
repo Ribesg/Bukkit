@@ -6,11 +6,9 @@ import org.bukkit.Achievement;
 public class AchievementMessagePart implements RichMessagePart {
 
     private final Achievement achievement;
-    private final boolean mode; // TODO Understand what this is
 
-    public AchievementMessagePart(Achievement achievement, boolean mode) {
+    public AchievementMessagePart(Achievement achievement) {
         this.achievement = achievement;
-        this.mode = mode;
     }
 
     @Override
@@ -20,9 +18,5 @@ public class AchievementMessagePart implements RichMessagePart {
 
     public Achievement getAchievement() {
         return achievement;
-    }
-
-    public boolean getMode() {
-        return mode;
     }
 }
