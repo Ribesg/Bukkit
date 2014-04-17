@@ -54,64 +54,12 @@ public class RichMessagePart {
 
     // TODO Simple Javadoc below this
 
-    public Boolean isBold() {
-        return bold;
-    }
-
-    public void setBold(Boolean bold) {
-        this.bold = bold;
-    }
-
-    public Boolean isUnderlined() {
-        return underlined;
-    }
-
-    public void setUnderlined(Boolean underlined) {
-        this.underlined = underlined;
-    }
-
-    public Boolean isItalic() {
-        return italic;
-    }
-
-    public void setItalic(Boolean italic) {
-        this.italic = italic;
-    }
-
-    public Boolean isStrikedThrough() {
-        return strikedThrough;
-    }
-
-    public void setStrikedThrough(Boolean strikedThrough) {
-        this.strikedThrough = strikedThrough;
-    }
-
-    public Boolean isMagic() {
-        return magic;
-    }
-
-    public void setMagic(Boolean magic) {
-        this.magic = magic;
-    }
-
     public String getText() {
         return text;
     }
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public ChatColor getColor() {
-        return color;
-    }
-
-    public void setColor(ChatColor color) {
-        if (color == null || color.ordinal() <= ChatColor.WHITE.ordinal()) {
-            this.color = color;
-        } else {
-            throw new IllegalArgumentException(color + " isn't supported here");
-        }
     }
 
     public ClickAction getClickAction() {
