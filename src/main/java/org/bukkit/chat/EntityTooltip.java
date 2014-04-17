@@ -2,6 +2,7 @@ package org.bukkit.chat;
 
 import org.bukkit.entity.LivingEntity;
 
+// TODO Javadoc
 public class EntityTooltip extends Tooltip {
 
     private final LivingEntity entity;

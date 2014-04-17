@@ -2,6 +2,7 @@ package org.bukkit.chat;
 
 import org.bukkit.Achievement;
 
+// TODO Javadoc
 public class AchievementTooltip extends Tooltip {
 
     private final Achievement achievement;

@@ -1,5 +1,6 @@
 package org.bukkit.chat;
 
+// TODO Javadoc
 public class TextTooltip extends Tooltip {
 
     private final String text;

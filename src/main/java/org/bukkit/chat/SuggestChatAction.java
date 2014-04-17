@@ -1,5 +1,6 @@
 package org.bukkit.chat;
 
+// TODO Javadoc
 public class SuggestChatAction extends ClickAction {
 
     private final String text;

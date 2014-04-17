@@ -2,6 +2,7 @@ package org.bukkit.chat;
 
 import java.util.regex.Pattern;
 
+// TODO Javadoc
 public class OpenUrlAction extends ClickAction {
 
     private static final Pattern HTTP_REGEX = Pattern.compile("^https?://", Pattern.CASE_INSENSITIVE);

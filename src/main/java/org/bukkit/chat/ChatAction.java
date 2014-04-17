@@ -1,5 +1,6 @@
 package org.bukkit.chat;
 
+// TODO Javadoc
 public class ChatAction extends ClickAction {
 
     private final String text;

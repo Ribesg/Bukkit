@@ -2,6 +2,7 @@ package org.bukkit.chat;
 
 import org.bukkit.inventory.ItemStack;
 
+// TODO Javadoc
 public class ItemTooltip extends Tooltip {
 
     private final ItemStack item;

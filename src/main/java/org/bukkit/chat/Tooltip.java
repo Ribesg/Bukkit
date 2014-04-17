@@ -1,5 +1,6 @@
 package org.bukkit.chat;
 
+// TODO Javadoc
 public abstract class Tooltip {
 
     protected enum Type {
