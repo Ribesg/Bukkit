@@ -13,6 +13,7 @@ import java.util.List;
  */
 // TODO Add translation stuff
 // TODO Add score stuff
+// TODO Add shortcuts for non-custom RichMessageParts
 public class RichMessage implements Iterable<RichMessagePart> {
 
     protected final List<RichMessagePart> parts = new LinkedList<RichMessagePart>();
@@ -35,7 +36,7 @@ public class RichMessage implements Iterable<RichMessagePart> {
     /**
      * Builds a RichMessage with one part.
      * <p>
-     * Provided arguments are passed to the RichMessagePart constructor
+     * Provided arguments are passed to the CustomMessagePart constructor
      * to create the first RichMessagePart.
      *
      * @param text        the text of this RichMessage
@@ -45,7 +46,7 @@ public class RichMessage implements Iterable<RichMessagePart> {
      *                    this RichMessage
      */
     public RichMessage(String text, ClickAction clickAction, HoverAction hoverAction) {
-        this(new RichMessagePart(text, clickAction, hoverAction));
+        this(new CustomMessagePart(text, clickAction, hoverAction));
     }
 
     /**
@@ -66,22 +67,22 @@ public class RichMessage implements Iterable<RichMessagePart> {
     }
 
     public RichMessage append(String text) {
-        this.parts.add(new RichMessagePart(text));
+        this.parts.add(new CustomMessagePart(text));
         return this;
     }
 
     public RichMessage append(String text, ClickAction clickAction) {
-        this.parts.add(new RichMessagePart(text, clickAction, null));
+        this.parts.add(new CustomMessagePart(text, clickAction, null));
         return this;
     }
 
     public RichMessage append(String text, HoverAction hoverAction) {
-        this.parts.add(new RichMessagePart(text, null, hoverAction));
+        this.parts.add(new CustomMessagePart(text, null, hoverAction));
         return this;
     }
 
     public RichMessage append(String text, ClickAction clickAction, HoverAction hoverAction) {
-        this.parts.add(new RichMessagePart(text, clickAction, hoverAction));
+        this.parts.add(new CustomMessagePart(text, clickAction, hoverAction));
         return this;
     }
 
@@ -92,22 +93,22 @@ public class RichMessage implements Iterable<RichMessagePart> {
     }
 
     public RichMessage insert(int index, String text) {
-        this.parts.add(index, new RichMessagePart(text));
+        this.parts.add(index, new CustomMessagePart(text));
         return this;
     }
 
     public RichMessage insert(int index, String text, ClickAction clickAction) {
-        this.parts.add(index, new RichMessagePart(text, clickAction, null));
+        this.parts.add(index, new CustomMessagePart(text, clickAction, null));
         return this;
     }
 
     public RichMessage insert(int index, String text, HoverAction hoverAction) {
-        this.parts.add(index, new RichMessagePart(text, null, hoverAction));
+        this.parts.add(index, new CustomMessagePart(text, null, hoverAction));
         return this;
     }
 
     public RichMessage insert(int index, String text, ClickAction clickAction, HoverAction hoverAction) {
-        this.parts.add(index, new RichMessagePart(text, clickAction, hoverAction));
+        this.parts.add(index, new CustomMessagePart(text, clickAction, hoverAction));
         return this;
     }
 
