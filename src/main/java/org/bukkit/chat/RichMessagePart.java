@@ -1,28 +1,13 @@
 package org.bukkit.chat;
 
-import org.bukkit.ChatColor;
-
 /**
  * Represents a part of a RichMessage
  */
 public class RichMessagePart {
 
     private String text;
-    private ChatColor color;
-    private Boolean bold;
-    private Boolean italic;
-    private Boolean magic;
-    private Boolean strikedThrough;
-    private Boolean underlined;
     private ClickAction clickAction;
     private Tooltip tooltip;
-
-    /**
-     * Builds an empty RichMessagePart.
-     */
-    public RichMessagePart() {
-        this(null, null, null);
-    }
 
     /**
      * Builds a text-only RichMessage.
