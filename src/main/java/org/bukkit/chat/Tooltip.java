@@ -3,9 +3,8 @@ package org.bukkit.chat;
 // TODO Javadoc
 public abstract class Tooltip {
 
-    protected enum Type {
+    public enum Type {
         SHOW_ACHIEVEMENT,
-        SHOW_ENTITY,
         SHOW_ITEM,
         SHOW_TEXT,
     }
@@ -14,5 +13,9 @@ public abstract class Tooltip {
 
     protected Tooltip(Type type) {
         this.type = type;
+    }
+
+    public Type getType() {
+        return type;
     }
 }

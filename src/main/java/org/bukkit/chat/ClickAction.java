@@ -3,7 +3,7 @@ package org.bukkit.chat;
 // TODO Javadoc
 public abstract class ClickAction {
 
-    protected enum Type {
+    public enum Type {
         OPEN_URL,
         RUN_COMMAND,
         SUGGEST_COMMAND,
@@ -13,5 +13,9 @@ public abstract class ClickAction {
 
     protected ClickAction(Type type) {
         this.type = type;
+    }
+
+    public Type getType() {
+        return type;
     }
 }
