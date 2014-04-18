@@ -7,7 +7,7 @@ public class CustomMessagePart implements RichMessagePart {
 
     private String text;
     private ClickAction clickAction;
-    private HoverAction hoverAction;
+    private String[] tooltipLines;
 
     /**
      * Builds a text-only CustomMessagePart.
@@ -17,7 +17,7 @@ public class CustomMessagePart implements RichMessagePart {
      * @param text the text of this RichMessage
      */
     public CustomMessagePart(String text) {
-        this(text, null, null);
+        this(text, null);
     }
 
     /**
@@ -25,16 +25,16 @@ public class CustomMessagePart implements RichMessagePart {
      * <p>
      * Note that the text can contain {@link org.bukkit.ChatColor} codes.
      *
-     * @param text        the text of this RichMessage
-     * @param clickAction the action executed when the player click on
-     *                    this RichMessage
-     * @param hoverAction the hoverAction executed when the player hover on
-     *                    this RichMessage
+     * @param text         the text of this RichMessage
+     * @param clickAction  the action executed when the player click on
+     *                     this RichMessage
+     * @param tooltipLines the text lines shown when the player hover on
+     *                     this RichMessage
      */
-    public CustomMessagePart(String text, ClickAction clickAction, HoverAction hoverAction) {
+    public CustomMessagePart(String text, ClickAction clickAction, String... tooltipLines) {
         this.text = text;
         this.clickAction = clickAction;
-        this.hoverAction = hoverAction;
+        this.tooltipLines = tooltipLines;
     }
 
     @Override
@@ -60,11 +60,11 @@ public class CustomMessagePart implements RichMessagePart {
         this.clickAction = clickAction;
     }
 
-    public HoverAction getHoverAction() {
-        return hoverAction;
+    public String[] getTooltipLines() {
+        return tooltipLines;
     }
 
-    public void setHoverAction(HoverAction hoverAction) {
-        this.hoverAction = hoverAction;
+    public void setTooltipLines(String[] tooltipLines) {
+        this.tooltipLines = tooltipLines;
     }
 }

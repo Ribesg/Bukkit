@@ -1,6 +1,8 @@
 package org.bukkit.chat;
 
 import org.apache.commons.lang.Validate;
+import org.bukkit.Achievement;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -8,12 +10,9 @@ import java.util.List;
 
 /**
  * Represents a RichMessage.
- * <p>
+ * <p/>
  * Basically whatever can be sent using the Vanilla /tellraw command
  */
-// TODO Add translation stuff
-// TODO Add score stuff
-// TODO Add shortcuts for non-custom RichMessageParts
 public class RichMessage implements Iterable<RichMessagePart> {
 
     protected final List<RichMessagePart> parts = new LinkedList<RichMessagePart>();
@@ -34,22 +33,6 @@ public class RichMessage implements Iterable<RichMessagePart> {
     }
 
     /**
-     * Builds a RichMessage with one part.
-     * <p>
-     * Provided arguments are passed to the CustomMessagePart constructor
-     * to create the first RichMessagePart.
-     *
-     * @param text        the text of this RichMessage
-     * @param clickAction the action executed when the player click on
-     *                    this RichMessage
-     * @param hoverAction the hoverAction executed when the player hover on
-     *                    this RichMessage
-     */
-    public RichMessage(String text, ClickAction clickAction, HoverAction hoverAction) {
-        this(new CustomMessagePart(text, clickAction, hoverAction));
-    }
-
-    /**
      * Gets the parts of this RichMessage.
      *
      * @return the parts of this RichMessage
@@ -58,7 +41,7 @@ public class RichMessage implements Iterable<RichMessagePart> {
         return this.parts;
     }
 
-    // TODO Simple Javadoc below this
+    // TODO Javadoc all the thingz
 
     public RichMessage append(RichMessagePart part) {
         Validate.notNull(part, "A rich message part can't be null");
@@ -66,25 +49,56 @@ public class RichMessage implements Iterable<RichMessagePart> {
         return this;
     }
 
-    public RichMessage append(String text) {
-        this.parts.add(new CustomMessagePart(text));
+    public RichMessage append(String text, String... tooltipLines) {
+        if (tooltipLines.length > 0) {
+            // TODO
+        } else {
+            this.append(new CustomMessagePart(text));
+        }
         return this;
     }
 
-    public RichMessage append(String text, ClickAction clickAction) {
-        this.parts.add(new CustomMessagePart(text, clickAction, null));
+    public RichMessage append(String text, ClickAction clickAction, String... tooltipLines) {
+        if (tooltipLines.length > 0) {
+            // TODO
+        } else {
+            this.append(new CustomMessagePart(text));
+        }
         return this;
     }
 
-    public RichMessage append(String text, HoverAction hoverAction) {
-        this.parts.add(new CustomMessagePart(text, null, hoverAction));
+    public RichMessage append(ItemStack item) {
+        // TODO
         return this;
     }
 
-    public RichMessage append(String text, ClickAction clickAction, HoverAction hoverAction) {
-        this.parts.add(new CustomMessagePart(text, clickAction, hoverAction));
+    public RichMessage append(ItemStack item, String customText) {
+        // TODO
         return this;
     }
+
+    public RichMessage append(ItemStack item, String customText, ClickAction clickAction) {
+        // TODO
+        return this;
+    }
+
+    public RichMessage append(Achievement achievement) {
+        // TODO
+        return this;
+    }
+
+    public RichMessage append(Achievement achievement, String customText) {
+        // TODO
+        return this;
+    }
+
+    public RichMessage append(Achievement achievement, String customText, ClickAction clickAction) {
+        // TODO
+        return this;
+    }
+
+    // TODO Score
+    // TODO Translatable
 
     @Override
     public Iterator<RichMessagePart> iterator() {
