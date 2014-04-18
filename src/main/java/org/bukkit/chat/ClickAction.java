@@ -5,8 +5,8 @@ public abstract class ClickAction {
 
     public enum Type {
         OPEN_URL,
-        RUN_COMMAND,
-        SUGGEST_COMMAND,
+        CHAT,
+        SUGGEST_CHAT,
     }
 
     protected final Type type;
