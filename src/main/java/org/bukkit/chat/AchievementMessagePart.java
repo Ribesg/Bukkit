@@ -18,8 +18,7 @@ public class AchievementMessagePart extends RichMessagePart {
      * The representation of the text message defaults to minecraft's
      * <b>"Achievement got"</b> design.
      * 
-     * @param achievement
-     *            the {@link Achievement} that should be displayed
+     * @param achievement the {@link Achievement} that should be displayed
      */
     public AchievementMessagePart(Achievement achievement) {
         this(achievement, (String) null);
@@ -30,10 +29,8 @@ public class AchievementMessagePart extends RichMessagePart {
      * <p>
      * Note that the text can contain {@link org.bukkit.ChatColor} codes.
      * 
-     * @param achievement
-     *            the {@link Achievement} that should be displayed
-     * @param customText
-     *            the text of this {@link RichMessagePart}
+     * @param achievement the {@link Achievement} that should be displayed
+     * @param customText the text of this {@link RichMessagePart}
      */
     public AchievementMessagePart(Achievement achievement, String customText) {
         super(Type.ACHIEVEMENT, customText);
@@ -46,16 +43,12 @@ public class AchievementMessagePart extends RichMessagePart {
      * <p>
      * Note that the text can contain {@link org.bukkit.ChatColor} codes.
      * 
-     * @param achievement
-     *            the {@link Achievement} that should be displayed
-     * @param customText
-     *            the text of this {@link RichMessagePart}
-     * @param clickAction
-     *            the action executed when the player click on this
-     *            {@link RichMessagePart}
+     * @param achievement the {@link Achievement} that should be displayed
+     * @param customText the text of this {@link RichMessagePart}
+     * @param clickAction the action executed when the player click on this
+     *        {@link RichMessagePart}
      */
-    public AchievementMessagePart(Achievement achievement, String customText,
-            ClickAction clickAction) {
+    public AchievementMessagePart(Achievement achievement, String customText, ClickAction clickAction) {
         super(Type.ACHIEVEMENT, customText, clickAction);
         this.achievement = achievement;
     }
@@ -63,13 +56,10 @@ public class AchievementMessagePart extends RichMessagePart {
     /**
      * Creates a new AchievementMessagePart with the given {@link Achievement}.
      * 
-     * @param achievement
-     *            the {@link Achievement} that should be displayed
-     * @param customText
-     *            the localized text of this {@link RichMessagePart}
+     * @param achievement the {@link Achievement} that should be displayed
+     * @param customText the localized text of this {@link RichMessagePart}
      */
-    public AchievementMessagePart(Achievement achievement,
-            LocalizedString customText) {
+    public AchievementMessagePart(Achievement achievement, LocalizedString customText) {
         super(Type.ACHIEVEMENT, customText);
         this.achievement = achievement;
     }
@@ -77,16 +67,12 @@ public class AchievementMessagePart extends RichMessagePart {
     /**
      * Creates a new AchievementMessagePart with the given {@link Achievement}.
      * 
-     * @param achievement
-     *            the {@link Achievement} that should be displayed
-     * @param customText
-     *            the localized text of this {@link RichMessagePart}
-     * @param clickAction
-     *            the action executed when the player click on this
-     *            {@link RichMessagePart}
+     * @param achievement the {@link Achievement} that should be displayed
+     * @param customText the localized text of this {@link RichMessagePart}
+     * @param clickAction the action executed when the player click on this
+     *        {@link RichMessagePart}
      */
-    public AchievementMessagePart(Achievement achievement,
-            LocalizedString customText, ClickAction clickAction) {
+    public AchievementMessagePart(Achievement achievement, LocalizedString customText, ClickAction clickAction) {
         super(Type.ACHIEVEMENT, customText, clickAction);
         this.achievement = achievement;
     }

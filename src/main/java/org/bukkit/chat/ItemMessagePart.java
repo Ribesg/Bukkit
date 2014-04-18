@@ -17,8 +17,7 @@ public class ItemMessagePart extends RichMessagePart {
      * Builds an ItemMessagePart with an {@link ItemStack} and the ItemStack's
      * name for text.
      * 
-     * @param item
-     *            the {@link ItemStack} that should be displayed
+     * @param item the {@link ItemStack} that should be displayed
      */
     public ItemMessagePart(ItemStack item) {
         this(item, (String) null);
@@ -30,10 +29,8 @@ public class ItemMessagePart extends RichMessagePart {
      * <p>
      * Note that the text can contain {@link org.bukkit.ChatColor} codes.
      * 
-     * @param item
-     *            the {@link ItemStack} that should be displayed
-     * @param customText
-     *            the text of this {@link RichMessagePart}
+     * @param item the {@link ItemStack} that should be displayed
+     * @param customText the text of this {@link RichMessagePart}
      */
     public ItemMessagePart(ItemStack item, String customText) {
         super(Type.ITEM, customText);
@@ -46,16 +43,12 @@ public class ItemMessagePart extends RichMessagePart {
      * <p>
      * Note that the text can contain {@link org.bukkit.ChatColor} codes.
      * 
-     * @param item
-     *            the {@link ItemStack} that should be displayed
-     * @param customText
-     *            the text of this {@link RichMessagePart}
-     * @param clickAction
-     *            the action executed when the player click on this
-     *            {@link RichMessagePart}
+     * @param item the {@link ItemStack} that should be displayed
+     * @param customText the text of this {@link RichMessagePart}
+     * @param clickAction the action executed when the player click on this
+     *        {@link RichMessagePart}
      */
-    public ItemMessagePart(ItemStack item, String customText,
-            ClickAction clickAction) {
+    public ItemMessagePart(ItemStack item, String customText, ClickAction clickAction) {
         super(Type.ITEM, customText, clickAction);
         this.item = item;
     }
@@ -64,10 +57,8 @@ public class ItemMessagePart extends RichMessagePart {
      * Builds an ItemMessagePart with an {@link ItemStack} and the provided
      * localized text.
      * 
-     * @param item
-     *            the {@link ItemStack} that should be displayed
-     * @param customText
-     *            the localized text of this {@link RichMessagePart}
+     * @param item the {@link ItemStack} that should be displayed
+     * @param customText the localized text of this {@link RichMessagePart}
      */
     public ItemMessagePart(ItemStack item, LocalizedString customText) {
         super(Type.ITEM, customText);
@@ -78,16 +69,12 @@ public class ItemMessagePart extends RichMessagePart {
      * Builds an ItemMessagePart with an {@link ItemStack}, the provided
      * localized text and a {@link ClickAction}.
      * 
-     * @param item
-     *            the {@link ItemStack} that should be displayed
-     * @param customText
-     *            the localized text of this {@link RichMessagePart}
-     * @param clickAction
-     *            the action executed when the player click on this
-     *            {@link RichMessagePart}
+     * @param item the {@link ItemStack} that should be displayed
+     * @param customText the localized text of this {@link RichMessagePart}
+     * @param clickAction the action executed when the player click on this
+     *        {@link RichMessagePart}
      */
-    public ItemMessagePart(ItemStack item, LocalizedString customText,
-            ClickAction clickAction) {
+    public ItemMessagePart(ItemStack item, LocalizedString customText, ClickAction clickAction) {
         super(Type.ITEM, customText, clickAction);
         this.item = item;
     }

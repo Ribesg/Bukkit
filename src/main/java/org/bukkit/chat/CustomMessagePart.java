@@ -12,8 +12,7 @@ public class CustomMessagePart extends RichMessagePart {
      * <p>
      * Note that the text can contain {@link org.bukkit.ChatColor} codes.
      * 
-     * @param text
-     *            the text of this RichMessage
+     * @param text the text of this RichMessage
      */
     public CustomMessagePart(String text) {
         this(text, (ClickAction) null);
@@ -24,10 +23,9 @@ public class CustomMessagePart extends RichMessagePart {
      * <p>
      * Note that the text can contain {@link org.bukkit.ChatColor} codes.
      * 
-     * @param text
-     *            the text of this RichMessage
-     * @param tooltipLines
-     *            the text lines shown when the player hover on this RichMessage
+     * @param text the text of this RichMessage
+     * @param tooltipLines the text lines shown when the player hover on this
+     *        RichMessage
      */
     public CustomMessagePart(String text, String... tooltipLines) {
         super(Type.CUSTOM, text);
@@ -39,15 +37,13 @@ public class CustomMessagePart extends RichMessagePart {
      * <p>
      * Note that the text can contain {@link org.bukkit.ChatColor} codes.
      * 
-     * @param text
-     *            the text of this RichMessage
-     * @param clickAction
-     *            the action executed when the player click on this RichMessage
-     * @param tooltipLines
-     *            the text lines shown when the player hover on this RichMessage
+     * @param text the text of this RichMessage
+     * @param clickAction the action executed when the player click on this
+     *        RichMessage
+     * @param tooltipLines the text lines shown when the player hover on this
+     *        RichMessage
      */
-    public CustomMessagePart(String text, ClickAction clickAction,
-            String... tooltipLines) {
+    public CustomMessagePart(String text, ClickAction clickAction, String... tooltipLines) {
         super(Type.CUSTOM, text, clickAction);
         this.tooltipLines = tooltipLines;
     }
@@ -55,8 +51,7 @@ public class CustomMessagePart extends RichMessagePart {
     /**
      * Builds a CustomMessagePart from a localized String.
      * 
-     * @param localizedText
-     *            the localized text of this RichMessage
+     * @param localizedText the localized text of this RichMessage
      */
     public CustomMessagePart(LocalizedString localizedText) {
         this(localizedText, (ClickAction) null);
@@ -65,13 +60,11 @@ public class CustomMessagePart extends RichMessagePart {
     /**
      * Builds a CustomMessagePart from a localized String and a tooltip.
      * 
-     * @param localizedText
-     *            the localized text of this RichMessage
-     * @param tooltipLines
-     *            the text lines shown when the player hover on this RichMessage
+     * @param localizedText the localized text of this RichMessage
+     * @param tooltipLines the text lines shown when the player hover on this
+     *        RichMessage
      */
-    public CustomMessagePart(LocalizedString localizedText,
-            String... tooltipLines) {
+    public CustomMessagePart(LocalizedString localizedText, String... tooltipLines) {
         super(Type.CUSTOM, localizedText);
         this.tooltipLines = tooltipLines;
     }
@@ -79,15 +72,13 @@ public class CustomMessagePart extends RichMessagePart {
     /**
      * Builds any CustomMessagePart.
      * 
-     * @param localizedText
-     *            the localized text of this RichMessage
-     * @param clickAction
-     *            the action executed when the player click on this RichMessage
-     * @param tooltipLines
-     *            the text lines shown when the player hover on this RichMessage
+     * @param localizedText the localized text of this RichMessage
+     * @param clickAction the action executed when the player click on this
+     *        RichMessage
+     * @param tooltipLines the text lines shown when the player hover on this
+     *        RichMessage
      */
-    public CustomMessagePart(LocalizedString localizedText,
-            ClickAction clickAction, String... tooltipLines) {
+    public CustomMessagePart(LocalizedString localizedText, ClickAction clickAction, String... tooltipLines) {
         super(Type.CUSTOM, localizedText, clickAction);
         this.tooltipLines = tooltipLines;
     }
@@ -113,9 +104,8 @@ public class CustomMessagePart extends RichMessagePart {
      * <p>
      * Note that the tooltip can contain {@link org.bukkit.ChatColor} codes.
      * 
-     * @param tooltipLines
-     *            the tooltip lines that should associated with this message
-     *            part or NULL to remove the tooltip
+     * @param tooltipLines the tooltip lines that should associated with this
+     *        message part or NULL to remove the tooltip
      */
     public void setTooltipLines(String[] tooltipLines) {
         this.tooltipLines = tooltipLines;

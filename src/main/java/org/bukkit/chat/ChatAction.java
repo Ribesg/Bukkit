@@ -9,11 +9,10 @@ public class ChatAction extends ClickAction {
     private final String text;
 
     /**
-     * Builds a new ChatAction, which will send the given text to the
-     * server, when clicked client side.
+     * Builds a new ChatAction, which will send the given text to the server,
+     * when clicked client side.
      * 
-     * @param text
-     *            The text that should be send to the server.
+     * @param text The text that should be send to the server.
      */
     public ChatAction(String text) {
         super(Type.CHAT);
