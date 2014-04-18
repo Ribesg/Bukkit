@@ -86,32 +86,6 @@ public class RichMessage implements Iterable<RichMessagePart> {
         return this;
     }
 
-    public RichMessage insert(int index, RichMessagePart part) {
-        Validate.notNull(part, "A rich message part can't be null");
-        this.parts.add(index, part);
-        return this;
-    }
-
-    public RichMessage insert(int index, String text) {
-        this.parts.add(index, new CustomMessagePart(text));
-        return this;
-    }
-
-    public RichMessage insert(int index, String text, ClickAction clickAction) {
-        this.parts.add(index, new CustomMessagePart(text, clickAction, null));
-        return this;
-    }
-
-    public RichMessage insert(int index, String text, HoverAction hoverAction) {
-        this.parts.add(index, new CustomMessagePart(text, null, hoverAction));
-        return this;
-    }
-
-    public RichMessage insert(int index, String text, ClickAction clickAction, HoverAction hoverAction) {
-        this.parts.add(index, new CustomMessagePart(text, clickAction, hoverAction));
-        return this;
-    }
-
     @Override
     public Iterator<RichMessagePart> iterator() {
         return this.parts.iterator();
