@@ -3,11 +3,10 @@ package org.bukkit.chat;
 import org.bukkit.inventory.ItemStack;
 
 /**
- * Represents a part of a RichMessage that shows an ItemStack.
+ * Represents a part of a RichMessagePart that shows an ItemStack.
  */
-public class ItemMessagePart implements RichMessagePart {
+public class ItemMessagePart extends RichMessagePart {
 
-    private final String text;
     private final ItemStack item;
 
     /**
@@ -17,32 +16,50 @@ public class ItemMessagePart implements RichMessagePart {
      * @param item an ItemStack
      */
     public ItemMessagePart(ItemStack item) {
-        this(null, item);
+        this(item, (String) null);
     }
 
     /**
-     * Builds an ItemMessagePart with an ItemStack and
-     * the the provided text.
+     * Builds an ItemMessagePart with an ItemStack and the provided text.
      *
      * @param item an ItemStack
      */
-    public ItemMessagePart(String text, ItemStack item) {
-        this.text = text;
+    public ItemMessagePart(ItemStack item, String customText) {
+        super(Type.ITEM, customText);
         this.item = item;
     }
 
-    @Override
-    public Type getType() {
-        return Type.ITEM;
+    /**
+     * Builds an ItemMessagePart with an ItemStack, the provided text and
+     * a ClickAction.
+     *
+     * @param item an ItemStack
+     */
+    public ItemMessagePart(ItemStack item, String customText, ClickAction clickAction) {
+        super(Type.ITEM, customText, clickAction);
+        this.item = item;
     }
 
     /**
-     * Gets the text for this ItemStackPart.
+     * Builds an ItemMessagePart with an ItemStack and the provided localized
+     * text.
      *
-     * @return the text for this ItemStackPart
+     * @param item an ItemStack
      */
-    public String getText() {
-        return text;
+    public ItemMessagePart(ItemStack item, LocalizedString customText) {
+        super(Type.ITEM, customText);
+        this.item = item;
+    }
+
+    /**
+     * Builds an ItemMessagePart with an ItemStack, the provided localized
+     * text and a ClickAction.
+     *
+     * @param item an ItemStack
+     */
+    public ItemMessagePart(ItemStack item, LocalizedString customText, ClickAction clickAction) {
+        super(Type.ITEM, customText, clickAction);
+        this.item = item;
     }
 
     /**

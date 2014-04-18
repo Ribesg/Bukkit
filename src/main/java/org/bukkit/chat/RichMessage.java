@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * Represents a RichMessage.
- * <p/>
+ * <p>
  * Basically whatever can be sent using the Vanilla /tellraw command
  */
 public class RichMessage implements Iterable<RichMessagePart> {
@@ -50,55 +50,60 @@ public class RichMessage implements Iterable<RichMessagePart> {
     }
 
     public RichMessage append(String text, String... tooltipLines) {
-        if (tooltipLines.length > 0) {
-            // TODO
-        } else {
-            this.append(new CustomMessagePart(text));
-        }
-        return this;
+        return this.append(new CustomMessagePart(text, tooltipLines));
+    }
+
+    public RichMessage append(LocalizedString text, String... tooltipLines) {
+        return this.append(new CustomMessagePart(text, tooltipLines));
     }
 
     public RichMessage append(String text, ClickAction clickAction, String... tooltipLines) {
-        if (tooltipLines.length > 0) {
-            // TODO
-        } else {
-            this.append(new CustomMessagePart(text));
-        }
-        return this;
+        return this.append(new CustomMessagePart(text, clickAction, tooltipLines));
+    }
+
+    public RichMessage append(LocalizedString text, ClickAction clickAction, String... tooltipLines) {
+        return this.append(new CustomMessagePart(text, clickAction, tooltipLines));
     }
 
     public RichMessage append(ItemStack item) {
-        // TODO
-        return this;
+        return this.append(new ItemMessagePart(item));
     }
 
     public RichMessage append(ItemStack item, String customText) {
-        // TODO
-        return this;
+        return this.append(new ItemMessagePart(item, customText));
+    }
+
+    public RichMessage append(ItemStack item, LocalizedString customText) {
+        return this.append(new ItemMessagePart(item, customText));
     }
 
     public RichMessage append(ItemStack item, String customText, ClickAction clickAction) {
-        // TODO
-        return this;
+        return this.append(new ItemMessagePart(item, customText, clickAction));
+    }
+
+    public RichMessage append(ItemStack item, LocalizedString customText, ClickAction clickAction) {
+        return this.append(new ItemMessagePart(item, customText, clickAction));
     }
 
     public RichMessage append(Achievement achievement) {
-        // TODO
-        return this;
+        return this.append(new AchievementMessagePart(achievement));
     }
 
     public RichMessage append(Achievement achievement, String customText) {
-        // TODO
-        return this;
+        return this.append(new AchievementMessagePart(achievement, customText));
+    }
+
+    public RichMessage append(Achievement achievement, LocalizedString customText) {
+        return this.append(new AchievementMessagePart(achievement, customText));
     }
 
     public RichMessage append(Achievement achievement, String customText, ClickAction clickAction) {
-        // TODO
-        return this;
+        return this.append(new AchievementMessagePart(achievement, customText, clickAction));
     }
 
-    // TODO Score
-    // TODO Translatable
+    public RichMessage append(Achievement achievement, LocalizedString customText, ClickAction clickAction) {
+        return this.append(new AchievementMessagePart(achievement, customText, clickAction));
+    }
 
     @Override
     public Iterator<RichMessagePart> iterator() {
