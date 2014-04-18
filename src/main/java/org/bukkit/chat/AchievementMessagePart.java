@@ -3,7 +3,7 @@ package org.bukkit.chat;
 import org.bukkit.Achievement;
 
 /**
- * Represents an achievement message as specified by minecraft.
+ * Represents an <b>"Achievement got"</b> message as specified by minecraft.
  * <p>
  * Note that the tooltip is fixed to the {@link Achievement} and cannot be
  * altered.
@@ -16,7 +16,7 @@ public class AchievementMessagePart extends RichMessagePart {
      * Creates a new AchievementMessagePart with the given {@link Achievement}.
      * <p>
      * The representation of the text message defaults to minecraft's
-     * "achievement got" design.
+     * <b>"Achievement got"</b> design.
      * 
      * @param achievement
      *            the {@link Achievement} that should be displayed
