@@ -5,8 +5,11 @@ import org.apache.commons.lang.Validate;
 /**
  * Represents a localized String.
  * <p>
- * This may be used to send localized text to Minecraft Client
- * through RichMessages.
+ * This may be used to send localized text to Minecraft Client through
+ * {@link RichMessage}s.
+ * <p>
+ * Note that adding new localized texts to Minecraft requires the server to send
+ * a resource package to the client containing these texts.
  */
 public class LocalizedString {
 
