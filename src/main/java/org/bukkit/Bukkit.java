@@ -10,6 +10,7 @@ import java.util.UUID;
 import java.util.logging.Logger;
 
 import org.bukkit.Warning.WarningState;
+import org.bukkit.chat.RichMessage;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.command.PluginCommand;
@@ -169,6 +170,13 @@ public final class Bukkit {
      * @see Server#broadcastMessage(String message)
      */
     public static int broadcastMessage(String message) {
+        return server.broadcastMessage(message);
+    }
+
+    /**
+     * @see Server#broadcastMessage(org.bukkit.chat.RichMessage message)
+     */
+    public static int broadcastMessage(RichMessage message) {
         return server.broadcastMessage(message);
     }
 
@@ -411,6 +419,13 @@ public final class Bukkit {
      * @see Server#broadcast(String message, String permission)
      */
     public static int broadcast(String message, String permission) {
+        return server.broadcast(message, permission);
+    }
+
+    /**
+     * @see Server#broadcast(RichMessage message, String permission)
+     */
+    public static int broadcast(RichMessage message, String permission) {
         return server.broadcast(message, permission);
     }
 

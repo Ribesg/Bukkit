@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Color;
 import org.bukkit.FireworkEffect;
+import org.bukkit.chat.*;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
@@ -33,6 +34,16 @@ public class ConfigurationSerialization {
         registerClass(Color.class);
         registerClass(PotionEffect.class);
         registerClass(FireworkEffect.class);
+        registerClass(AchievementMessagePart.class);
+        registerClass(ChatAction.class);
+        registerClass(ClickAction.class);
+        registerClass(CustomMessagePart.class);
+        registerClass(ItemMessagePart.class);
+        registerClass(LocalizedText.class);
+        registerClass(OpenUrlAction.class);
+        registerClass(RichMessage.class);
+        registerClass(RichMessagePart.class);
+        registerClass(SuggestChatAction.class);
     }
 
     protected ConfigurationSerialization(Class<? extends ConfigurationSerializable> clazz) {
