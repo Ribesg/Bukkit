@@ -26,7 +26,7 @@ public abstract class ClickAction implements ConfigurationSerializable {
      */
     public enum Type {
         /**
-         * Opens an URL on click.
+         * Opens the "do you really want to open that URL" prompt on click.
          */
         OPEN_URL,
 
