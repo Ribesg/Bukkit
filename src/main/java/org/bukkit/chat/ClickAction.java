@@ -26,7 +26,8 @@ public abstract class ClickAction implements ConfigurationSerializable {
      */
     public enum Type {
         /**
-         * Opens the "do you really want to open that URL" prompt on click.
+         * Opens the url or the "do you really want to open that URL" prompt
+         * on click. Depending on the player's chat settings.
          */
         OPEN_URL,
 
