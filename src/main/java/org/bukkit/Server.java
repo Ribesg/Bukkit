@@ -200,9 +200,8 @@ public interface Server extends PluginMessageRecipient {
     /**
      * Broadcast a rich message to all players.
      * <p>
-     * This is the same as calling {@link #broadcast(
-     * org.bukkit.chat.RichMessage, java.lang.String)} to {@link
-     * #BROADCAST_CHANNEL_USERS}
+     * This is the same as calling {@link #broadcast(RichMessage, String)}
+     * to {@link #BROADCAST_CHANNEL_USERS}
      *
      * @param message the rich message
      * @return the number of players
