@@ -13,9 +13,59 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Represents a RichMessage.
+ * A RichMessage is a chat message able to contain the different
+ * modifiers used by vanilla which include:
  * <p>
- * Basically whatever can be sent using the Vanilla /tellraw command
+ * <li>Chat formatting</li>
+ * <li>Localized text</li>
+ * <li>Chat actions (executed when the player clicks it)</li>
+ * <li>Chat tooltips (displayed when the player hovers it)</li>
+ * <p>
+ * It's done using the builder pattern (similar to {@link StringBuilder})
+ * <p>
+ * Chat formatting is done using {@link org.bukkit.ChatColor} like you
+ * would do in every other message:
+ * {@code String message = ChatColor.RED + "This message is red"; }
+ * Localizing text is done by using the vanilla identifier and parameters
+ * (if needed) with the {@link LocalizedText} class:
+ * <pre> {@code
+ * // Without parameters
+ * new LocalizedText("stream.userinfo.unmod");
+ * // or with parameters
+ * new LocalizedText("commands.scoreboard.players.reset.success", "Notch");
+ * }</pre>
+ * All the chat actions are handle by
+ * <p>
+ * <li>{@link ChatAction}</li>
+ * <li>{@link OpenUrlAction}</li>
+ * <li>{@link SuggestChatAction}</li>
+ * <p>
+ * and the chat tooltips are handled by
+ * <p>
+ * <li>{@link CustomMessagePart}</li>
+ * <li>{@link AchievementMessagePart}</li>
+ * <li>{@link ItemMessagePart}</li>
+ * <p>
+ * A message part (which can be appended to a RichMessage) is a
+ * RichMessagePart containing some text (localized or not), a chat
+ * tooltip and a chat action.
+ * <p>
+ * Here are some examples of how to use RichMessage's:
+ * <pre> {@code
+ * // Message showing a golden apple tooltip
+ * ItemStack is = new ItemStack(Material.GOLDEN_APPLE)
+ * new RichMessage(ChatColor.RED + "Here is a golden apple: ")
+ *     .append(new ItemMessagePart(is));
+ *
+ * // Message showing a text tooltip and triggering the /me clicked command
+ * new RichMessage()
+ *     .append(new CustomMessagePart(
+ *         "Click me",
+ *         new ChatAction("/me clicked"),
+ *         "you are hovering"
+ *     )
+ * );
+ * }</pre>
  */
 public class RichMessage implements Iterable<RichMessagePart>, ConfigurationSerializable {
 
