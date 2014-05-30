@@ -51,7 +51,7 @@ import java.util.Map;
  * instance of RichMessagePart containing text (localized or not),
  * a chat tooltip and a chat action.
  * <p>
- * Here are two example of the RichMessage class usage:
+ * Here are two examples of the RichMessage class usage:
  * <pre> {@code
  * // Message showing a golden apple tooltip
  * ItemStack is = new ItemStack(Material.GOLDEN_APPLE)
