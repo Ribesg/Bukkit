@@ -21,20 +21,21 @@ import java.util.Map;
  * <li>Chat actions (executed when the player clicks it)</li>
  * <li>Chat tooltips (displayed when the player hovers it)</li>
  * <p>
- * It's done using the builder pattern (similar to {@link StringBuilder})
+ * RichMessage structure and usage is based on the builder pattern
+ * (similar to {@link StringBuilder}).
  * <p>
- * Chat formatting is done using {@link org.bukkit.ChatColor} like you
- * would do in every other message:
+ * Chat formatting is done using {@link org.bukkit.ChatColor} as it is
+ * done in every other message:
  * {@code String message = ChatColor.RED + "This message is red"; }
- * Localizing text is done by using the vanilla identifier and parameters
- * (if needed) with the {@link LocalizedText} class:
+ * The text is localized using the vanilla identifiers (and parameters
+ * if needed) with the {@link LocalizedText} class:
  * <pre> {@code
  * // Without parameters
  * new LocalizedText("stream.userinfo.unmod");
  * // or with parameters
  * new LocalizedText("commands.scoreboard.players.reset.success", "Notch");
  * }</pre>
- * All the chat actions are handle by
+ * All the chat actions are handled by
  * <p>
  * <li>{@link ChatAction}</li>
  * <li>{@link OpenUrlAction}</li>
@@ -46,18 +47,18 @@ import java.util.Map;
  * <li>{@link AchievementMessagePart}</li>
  * <li>{@link ItemMessagePart}</li>
  * <p>
- * A message part (which can be appended to a RichMessage) is a
- * RichMessagePart containing some text (localized or not), a chat
- * tooltip and a chat action.
+ * A message part (which can be appended to a RichMessage) is an
+ * instance of RichMessagePart containing text (localized or not),
+ * a chat tooltip and a chat action.
  * <p>
- * Here are some examples of how to use RichMessage's:
+ * Here are two example of the RichMessage class usage:
  * <pre> {@code
  * // Message showing a golden apple tooltip
  * ItemStack is = new ItemStack(Material.GOLDEN_APPLE)
  * new RichMessage(ChatColor.RED + "Here is a golden apple: ")
  *     .append(new ItemMessagePart(is));
  *
- * // Message showing a text tooltip and triggering the /me clicked command
+ * // Message showing a text tooltip and triggering the "/me clicked" command
  * new RichMessage()
  *     .append(new CustomMessagePart(
  *         "Click me",
